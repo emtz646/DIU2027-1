@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>FCiencias Objetos Perdidos</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="./index.html" class="btn-circular" data-button="home" aria-label="Inicio">
+        <img src="./resources/sym/sym_home.png" alt="">
+      </a>
+
+      <div class="searchbar">
+        <input
+          class="searchbar-input"
+          type="search"
+          aria-label="Buscar"
+          placeholder="Buscar..."
+        >
+        <button class="btn-searchbar" data-button="search" type="button" aria-label="Buscar">
+          <img src="./resources/sym/sym_search.png" alt="">
+        </button>
+      </div>
+
+      <button class="btn-cuadrado" data-button="config" type="button" aria-label="Configuración">
+        <img src="./resources/btn/btn_frame.png" data-part="btn_frame" alt="">
+        <img src="./resources/sym/sym_config.png" data-part="sym_config" alt="">
+      </button>
+
+      <button class="btn-cuadrado" data-button="user" type="button" aria-label="Usuario">
+        <img src="./resources/btn/btn_user.png" alt="">
+      </button>
+      
+    </header>
+    
+
+    <main>
+      <h1 class="titulo-pagina">OBJETOS PERDIDOS</h1>
+    </main>
+
+    <aside class="acciones-flotantes" aria-label="Acciones rápidas">
+      <button class="btn-circular" type="button" aria-label="Libro">
+        <img src="./resources/sym/sym_book.png" alt="">
+      </button>
+      <button class="btn-circular" type="button" aria-label="Escribir">
+        <img src="./resources/sym/sym_write.png" alt="">
+      </button>
+      <button class="boton-mensajes" type="button" aria-label="Mensajes">
+        <img class="icono-mensajes" src="./resources/btn/sym_messages.png" alt="">
+        <span class="contador-mensajes" aria-label="Contador de mensajes">
+          <img src="./resources/sym/sym_counter.png" alt="">
+          <span>#</span>
+        </span>
+      </button>
+    </aside>
+
+    <footer class="barra-pie">
+      <p>unam</p>
+    </footer>
+
+  </body>
+</html>
