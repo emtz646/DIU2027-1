@@ -17,14 +17,13 @@
   --color-blanco: #fff;
   --color-borde-publicacion: #777;
   --color-fondo-publicacion: #e0e0e0;
-  --color-fondo-estado-recuperado: rgba(206, 241, 250, 0.55);
+  --color-fondo-estado-recuperado: #CEF1FA;
   --color-borde-estado-recuperado: #31A29C;
-  --color-fondo-estado-encontrado: rgba(230, 186, 140, 0.55);
-  --color-borde-estado-encontrado: #D69942;
-  --color-fondo-estado-perdido: rgba(225, 131, 126, 0.55);
+  --color-fondo-estado-encontrado: #E6BA8C;
+  --color-borde-estado-encontrado: #D69242;
+  --color-fondo-estado-perdido: #E1837E;
   --color-borde-estado-perdido: #C54445;
   --color-borde-imagen: #224488;
-  --color-sombra-imagen: rgba(0, 0, 0, 0.2);
   --color-borde-principal-transparente: rgba(53, 197, 236, 0.12);
   --color-transparente: transparent;
   --tamano-boton: 5vw;
@@ -328,7 +327,7 @@ main {
   position: fixed;
   z-index: 5;
   right: clamp(16px, 3vw, 58px);
-  bottom: clamp(56px, 3vh, 28px);
+  bottom: clamp(28px, 3vh, 56px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -667,7 +666,7 @@ main {
   align-items: center;
   width: min(100%, 265px);
   margin: 24px auto;
-  padding: clamp(11px, 1.8vw, 16px);
+  padding: clamp(12px, 1.8vw, 17px);
   border: 3px solid var(--color-borde-publicacion);
   border-radius: 20px;
   background-color: var(--color-fondo-publicacion);
@@ -727,10 +726,14 @@ main {
 }
 
 .titulo-objeto {
+  width: 100%;
+  overflow: hidden;
   margin: 0 0 12px;
   color: var(--color-negro);
   font-size: clamp(1rem, 1.1vw + 0.65rem, 1.35rem);
   font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .detalles-caja {
@@ -738,7 +741,8 @@ main {
   flex-direction: column;
   gap: 6px;
   width: 100%;
-  height: 96px;
+  height: 104px;
+  overflow: hidden;
   padding: 10px 8px;
   border: 3px dashed var(--color-borde-publicacion);
   border-radius: 12px;
@@ -752,9 +756,16 @@ main {
 }
 
 .descripcion {
+  display: -webkit-box;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
   margin: 0;
   color: var(--color-negro);
   font-size: 0.9rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: pre-line;
 }
 
 .estado-caja {
@@ -767,6 +778,21 @@ main {
   font-family: "Tiny 5 Regular", sans-serif;
   font-size: 0.8rem;
   font-weight: bold;
+}
+
+.estado-caja[data-estado="RECUPERADO"] {
+  border-color: var(--color-borde-estado-recuperado);
+  background-color: var(--color-fondo-estado-recuperado);
+}
+
+.estado-caja[data-estado="ENCONTRADO"] {
+  border-color: var(--color-borde-estado-encontrado);
+  background-color: var(--color-fondo-estado-encontrado);
+}
+
+.estado-caja[data-estado="PERDIDO"] {
+  border-color: var(--color-borde-estado-perdido);
+  background-color: var(--color-fondo-estado-perdido);
 }
 
 /* ----------------------
@@ -784,7 +810,6 @@ main {
 }
 
 .carrusel-ventana {
-  --publicaciones-visibles: 3;
   grid-column: 2;
   container-type: inline-size;
   min-width: 0;
@@ -966,7 +991,6 @@ main {
 */
 @media (max-width: 1000px) {
   .carrusel-ventana {
-    --publicaciones-visibles: 2;
     max-width: var(--ancho-carrusel-tablet);
   }
 
@@ -1098,7 +1122,6 @@ main {
   }
 
   .carrusel-ventana {
-    --publicaciones-visibles: 1;
     max-width: var(--ancho-publicacion-carrusel);
   }
 
