@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <!-- ----------------------
+         ENCABEZADO Y BARRA DE NAVEGACIÓN
+         ---------------------- -->
     <header>
       <a href="./index.html" class="btn-circular" data-button="home" aria-label="Inicio">
         <img src="./resources/sym/sym_home.png" alt="">
@@ -34,14 +37,18 @@
       <button class="btn-cuadrado" data-button="user" type="button" aria-label="Usuario">
         <img src="./resources/btn/btn_user.png" alt="">
       </button>
-      
     </header>
-    
 
+    <!-- ----------------------
+         CONTENIDO PRINCIPAL
+         ---------------------- -->
     <main>
+      <!-- Título de la página -->
       <h1 class="titulo-pagina">OBJETOS PERDIDOS</h1>
 
+      <!-- Carrusel de publicaciones -->
       <section class="carrusel" aria-label="Objetos Perdidos">
+        <!-- Selectores de página -->
         <input class="carrusel-selector" type="radio" name="posicion-carrusel" id="posicion-1" checked aria-label="Publicación 1">
         <input class="carrusel-selector" type="radio" name="posicion-carrusel" id="posicion-2" aria-label="Publicación 2">
         <input class="carrusel-selector" type="radio" name="posicion-carrusel" id="posicion-3" aria-label="Publicación 3">
@@ -53,6 +60,7 @@
         <input class="carrusel-selector" type="radio" name="posicion-carrusel" id="posicion-9" aria-label="Publicación 9">
         <input class="carrusel-selector" type="radio" name="posicion-carrusel" id="posicion-10" aria-label="Publicación 10">
 
+        <!-- Tarjetas de publicaciones -->
         <div class="carrusel-ventana">
           <div class="carrusel-lista">
             <article class="publicacion">
@@ -218,6 +226,7 @@
           </div>
         </div>
 
+        <!-- Controles de navegación del carrusel -->
         <div class="carrusel-controles" aria-label="Navegación del carrusel">
           <div class="controles-pagina controles-pagina-1">
             <span class="btn-carrusel btn-carrusel-deshabilitado" aria-hidden="true"><img src="./resources/btn/btn_left.png" alt=""></span>
@@ -263,13 +272,62 @@
           </div>
         </div>
       </section>
-
     </main>
 
+    <!-- ----------------------
+         ACCIONES FLOTANTES
+         ---------------------- -->
     <aside class="acciones-flotantes" aria-label="Acciones rápidas">
+      <!-- Acceso a publicaciones -->
       <button class="btn-circular" type="button" aria-label="Libro">
         <img src="./resources/sym/sym_book.png" alt="">
       </button>
+
+      <!-- Botón y formulario para crear una publicación -->
+      <details class="escribir-contenedor">
+        <summary class="btn-circular" aria-label="Escribir">
+          <img src="./resources/sym/sym_write.png" alt="">
+        </summary>
+        <form class="escribir-popup">
+          <!-- Cerrar el formulario -->
+          <button class="popup-cerrar" type="button" aria-label="Cerrar">
+            <img src="./resources/sym/sym_x.png" alt="">
+          </button>
+
+          <!-- Datos de la publicación -->
+          <div class="escribir-campo">
+            <label for="nombre-objeto">NOMBRE DE OBJETO</label>
+            <input id="nombre-objeto" name="nombre-objeto" type="text" required>
+          </div>
+          <div class="escribir-campo">
+            <label for="fecha-objeto">FECHA</label>
+            <input id="fecha-objeto" name="fecha" type="date" required>
+          </div>
+          <div class="escribir-campo">
+            <label for="estado-objeto">ESTADO</label>
+            <select id="estado-objeto" name="estado" required>
+              <option value="" selected disabled>Selecciona un estado</option>
+              <option value="RECUPERADO">RECUPERADO</option>
+              <option value="ENCONTRADO">ENCONTRADO</option>
+              <option value="PERDIDO">PERDIDO</option>
+            </select>
+          </div>
+          <div class="escribir-campo">
+            <label for="descripcion-objeto">DESCRIPCIÓN</label>
+            <textarea id="descripcion-objeto" name="descripcion" rows="3" required></textarea>
+          </div>
+          <div class="escribir-campo">
+            <span class="etiqueta-foto">FOTO</span>
+            <button class="popup-agregar-foto" type="button">
+              <img src="./resources/sym/sym_camera.png" alt="">
+              AGREGAR FOTO
+            </button>
+          </div>
+          <button class="popup-publicar" type="submit">PUBLICAR</button>
+        </form>
+      </details>
+
+      <!-- Chat -->
       <button class="boton-mensajes" type="button" aria-label="Mensajes">
         <img class="icono-mensajes" src="./resources/btn/sym_messages.png" alt="">
         <span class="contador-mensajes" aria-label="Contador de mensajes">
@@ -279,8 +337,12 @@
       </button>
     </aside>
 
+    <!-- ----------------------
+         PIE DE PÁGINA
+         ---------------------- -->
     <footer class="barra-pie">
       <p>unam</p>
     </footer>
+
   </body>
 </html>
